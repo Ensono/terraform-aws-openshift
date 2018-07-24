@@ -4,7 +4,7 @@ variable ExistingAWSServiceBrokerRole {
 }
 
 variable HawkularMetrics {
-  default     = true
+  default     = "Enabled"
   description = "Enable Hawkular cluster metrics"
 }
 
@@ -16,4 +16,9 @@ variable OpenshiftContainerPlatformVersion {
 variable OpenShiftAdminPassword {
   default     = ""
   description = "TPassword for OpenShift Admin UI Must be 8-12 characters containing letters and (minimum 1 capital letter), numbers and symbols"
+}
+
+variable AWSServiceBroker {
+  default     = "Enabled"
+  description = "Enable AWS Service Broker"
 }

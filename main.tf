@@ -77,11 +77,12 @@ resource "aws_cloudformation_stack" "openshift" {
     DomainName                        = "${var.DomainName}"
     SubDomainPrefix                   = "${var.SubDomainPrefix}"
     HawkularMetrics                   = "${var.HawkularMetrics}"
-    ClusterName                       = "${aws_cloudformation_stack.openshift.name}"
+    ClusterName                       = "openshift-stack"
   }
 
-  on_failure   = "DELETE"
+  # on_failure   = "DELETE"
   template_url = "https://${var.QSS3BucketName}.s3.amazonaws.com/${var.QSS3KeyPrefix}templates/openshift.template"
+  capabilities = ["CAPABILITY_IAM"]
 
   timeouts {
     create = "2h"
