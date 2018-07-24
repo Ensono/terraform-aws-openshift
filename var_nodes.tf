@@ -1,5 +1,6 @@
 variable KeyPairName {
-  default     = ""
+  # TODO find a way of making this dynamic.
+  default     = "terraformOS"                                                                                                              #
   description = "The name of an existing public/private key pair, which allows you to securely connect to your instance after it launches"
 }
 
