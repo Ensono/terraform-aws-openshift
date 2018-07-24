@@ -34,9 +34,7 @@ resource "aws_cloudformation_stack" "openshiftnetwork" {
   }
 
   on_failure   = "DELETE"
-  template_url = "https://github.com/amido/terraform-aws-openshift/blob/master/source/aws-vpc.template"
-
-  # template_url = "https://${var.QSS3BucketName}.s3.amazonaws.com/${var.QSS3KeyPrefix}submodules/quickstart-aws-vpc/templates/aws-vpc.template"
+  template_url = "https://${var.QSS3BucketName}.s3.amazonaws.com/${var.QSS3KeyPrefix}submodules/quickstart-aws-vpc/templates/aws-vpc.template"
 
   timeouts {
     create = "2h"
@@ -83,9 +81,7 @@ resource "aws_cloudformation_stack" "openshift" {
   }
 
   # on_failure   = "DELETE"
-  template_url = "https://github.com/amido/terraform-aws-openshift/blob/master/source/openshift.template"
-
-  # template_url = "https://${var.QSS3BucketName}.s3.amazonaws.com/${var.QSS3KeyPrefix}templates/openshift.template"
+  template_url     = "https://${var.QSS3BucketName}.s3.amazonaws.com/${var.QSS3KeyPrefix}templates/openshift.template"
   capabilities     = ["CAPABILITY_IAM"]
   disable_rollback = true
 
